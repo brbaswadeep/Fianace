@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Finance Portal</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background: #002147;
+        color: white;
+        padding: 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem; /* Adjust font size if needed */
+      }
+
+      header img {
+        height: 60px;
+        margin-right: -270px; /* Decrease this value to bring the logo and title closer */
+      }
+
+      nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .slide {
+        display: none;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .active {
+        display: block;
+        opacity: 1;
+      }
+
+      .main-content {
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        margin: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .btn {
+        background: #004080;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        background: #00264d;
+      }
+
+      footer {
+        background: #002147;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+
+      /* Media Queries for Responsiveness */
+
+      /* Tablet and Smaller Devices */
+      @media screen and (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .slideshow-container {
+          max-height: 300px;
+        }
+
+        .slide {
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .main-content {
+          margin: 10px;
+        }
+
+        .buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        footer {
+          position: relative;
+        }
+      }
+
+      /* Mobile Devices */
+      @media screen and (max-width: 480px) {
+        header h1 {
+          font-size: 1.2rem;
+        }
+
+        nav {
+          gap: 10px;
+        }
+
+        .main-content {
+          padding: 15px;
+        }
+
+        .btn {
+          padding: 8px 12px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="homelogo.png" alt="" height="60px" />
+      <h1>DEPARTMENT OF FINANCIAL SERVICES</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="banking.html">Banking</a>
+        <a href="insurance.html">Insurance</a>
+        <a href="pensionreforms.html">Pension Reforms</a>
+        <a href="financialreforms.html">Financial Inclusion</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <div class="slideshow-container">
+      <img class="slide active" src="image1.jpeg" alt="Slide 1" />
+      <img class="slide" src="image2.jpeg" alt="Slide 2" height="400px" />
+    </div>
+
+    <div class="main-content">
+      <h2>Welcome to the Government Finance Portal</h2>
+      <p>
+        Explore financial transparency, access government services, and stay
+        informed about public expenditures.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn">Innovative Products</a>
+        <a href="#" class="btn">Digi Dhan Dashboard</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Government Finance Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+              slide.classList.add("active");
+            }
+          });
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3500);
+      });
+    </script>
+  </body>
+</html>
